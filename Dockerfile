@@ -15,7 +15,11 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # java 14
-RUN apt-get install openjdk-14-jre -y
+RUN add-apt-repository ppa:linuxuprising/java \
+    && apt-get update -y 
+    && apt-get install openjdk-14-jre -y \
+    && apt-get -y install oracle-java14-set-default
+
 
 USER container
 ENV  USER container
