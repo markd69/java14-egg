@@ -1,2 +1,2 @@
-# java8-egg
-Pterodactyl Egg for Java 8
+# java14-egg
+Pterodactyl Egg for Java 14
