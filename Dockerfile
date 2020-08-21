@@ -1,4 +1,4 @@
-FROM    ubuntu:18.04
+FROM    adoptopenjdk/openjdk14:latest
 
 MAINTAINER  Mark David
 
@@ -13,14 +13,6 @@ RUN apt update \
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
-
-# java 14
-RUN add-apt-repository ppa:linuxuprising/java \
-    && apt-get update -y \
-    && echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \ 
-    && echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections \ 
-    && apt-get install openjdk-14-jre -y \
-    && apt-get -y install oracle-java14-set-default
 
 
 USER container
